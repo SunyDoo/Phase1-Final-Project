@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script  src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Sunil's Card Shop</title>
+</head>
+<body>
+    <div id="heading">
+        <nav class="nav-extended" background-color:#002d60 >
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Welcome to Sunil's Card Shop</a>
+              <ul class="right hide-on-med-and-down">
+                <li><a>View Collection</a></li>
+                <li><a>Auction New Card</a></li>
+              </ul>
+            </div>
+            <div class="nav-content">
+              <span class="nav-title">Auction Ends:                  
+                  <script>
+                var countDownDate = new Date("Jan 31, 2022 15:37:25").getTime();
+                var x = setInterval(function() {
+                  var now = new Date().getTime();
+                  var distance = countDownDate - now;
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+                </script>
+                </span>
+              <p id="demo"></p>
+            </div>
+          </nav>
+    </div>
+    <div id="main">
+        
+    </div>
+    <script src="javascripts/index.js"></script>
+</body>
+</html>
