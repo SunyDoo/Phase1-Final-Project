@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheets" href="stylessheets/index.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script  src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Sunil's Card Shop</title>
 </head>
-<body>
+<body style="background-color: #914343" >
     <div id="heading">
-        <nav class="nav-extended" background-color:#002d60 >
+        <nav class="nav-extended blue darken-2">
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo">Welcome to Sunil's Card Shop</a>
+              <br>
+              <div class = "center-align">
+              <img src = "https://img.konami.com/kde_cms/eu_publish/uploads/ygo-logo-with-copyright-600x279.png" alt="YuGiOh Logo" class = "center-align"/>
+            </div>
               <ul class="right hide-on-med-and-down">
-                <li><a>View Collection</a></li>
-                <li><a>Auction New Card</a></li>
+                <li><a class="waves-effect waves-light btn red accent-4" id="view">View Collection</a></li>
+                <li><a class="waves-effect waves-light btn red accent-4" id="newCard">Auction New Card</a></li>
               </ul>
             </div>
-            <div class="nav-content">
+            <div class="nav-content center-align">
               <span class="nav-title">Auction Ends:                  
                   <script>
                 var countDownDate = new Date("Jan 31, 2022 15:37:25").getTime();
