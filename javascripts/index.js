@@ -34,6 +34,7 @@ function fetchCards(){
 //function to renderOneCard
 function renderOneCard(cardObj){
     const card = document.createElement('ul')
+    card.id = `${cardObj.id}`
     card.className='card'
     card.style.background = '#bdbdbd'
     card.style.display = 'inline-grid';
@@ -48,12 +49,48 @@ function renderOneCard(cardObj){
         CurrentBid: $<span class="current-bid">${cardObj.currentBid}</span>
         </p>
     <div class="card-buttons">
-        <button class="waves-effect waves-light btn indigo darken-3">Bid $5 </button>
-        <button class="waves-effect waves-light btn red accent-4">Purchase For:$<span class="current-bid">${cardObj.price}</span></button>
+        <button id ="bid" class="waves-effect waves-light btn indigo darken-3">Bid $5 </button>
+        <button id ="buyout" class="waves-effect waves-light btn red accent-4">Purchase For:$<span class="current-bid">${cardObj.price}</span></button>
     `
     main.appendChild(card)
+    card.querySelector('#bid').addEventListener('click', ()=>{
+        cardObj.currentBid +=5
+        card.querySelector('span').textContent = cardObj.currentBid
+        updateBids(cardObj)
+    })
+    card.querySelector('#buyout').addEventListener('click', (event)=>{
+        console.log(event)
+        card.remove()
+        deleteCard(cardObj)
+    })
 }
 
+
+
+//function to update bids to server
+function updateBids(cardObj){
+    fetch(`${baseURL}/${cardObj.id}`,{
+        method: 'PATCH',
+        headers:{
+            "Content-Type": 'application/json'
+        },
+        body:JSON.stringify(cardObj)
+    })
+    .then(res=>res.json())
+    .then(card=>console.log(card))
+}
+
+//function to delete card from server
+function deleteCard(cardObj){
+    fetch(`${baseURL}/${cardObj.id}`,{
+        method: 'DELETE',
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+}
 
 
 
