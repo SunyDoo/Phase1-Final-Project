@@ -6,6 +6,10 @@ const main = document.getElementById('main')
 const viewCollection = document.getElementById('view')
 const newCard = document.getElementById('newCard')
 
+//style elements in body
+main.style.boxSizing = 'border-box'
+main.style.textAlign= 'center';
+
 //content load and page refresh
 document.addEventListener('DOMContentLoaded',()=>{
     pagerefresh()
@@ -31,8 +35,9 @@ function fetchCards(){
 function renderOneCard(cardObj){
     const card = document.createElement('ul')
     card.className='card'
-    card.style.background = '#914343'
+    card.style.background = '#bdbdbd'
     card.style.display = 'inline-grid';
+    card.style.padding = '1rem'
     card.innerHTML=`
     <img src="${cardObj.image}" class="card-pic" />
     <div class="card-info">
@@ -43,8 +48,8 @@ function renderOneCard(cardObj){
         CurrentBid: $<span class="current-bid">${cardObj.currentBid}</span>
         </p>
     <div class="card-buttons">
-        <button>Bid $5 </button>
-        <button>Purchase For:$<span class="current-bid">${cardObj.price}</span></button>
+        <button class="waves-effect waves-light btn indigo darken-3">Bid $5 </button>
+        <button class="waves-effect waves-light btn red accent-4">Purchase For:$<span class="current-bid">${cardObj.price}</span></button>
     `
     main.appendChild(card)
 }
