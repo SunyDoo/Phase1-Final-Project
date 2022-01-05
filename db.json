@@ -1,0 +1,100 @@
+{
+    "cards": [
+      {
+        "id": 1,
+        "name": "Exodia The Forbidden One",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/21954.jpg",
+        "edition": "Unlimited",
+        "card-number": "LOB-124",
+        "price": 60
+      },
+      {
+        "id": 2,
+        "name": "Exodia Necross",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/123492.jpg",
+        "edition": "1st Edition",
+        "card-number": "DCR-020",
+        "price": 175
+      },
+      {
+        "id": 3,
+        "name": "Blue Eyes White Dragon",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/21792.jpg",
+        "edition": "Unlimited",
+        "card-number": "LOB-001",
+        "price": 120
+      },
+      {
+        "id": 4,
+        "name": "Blue Eyes White Dragon",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/35048.jpg",
+        "edition": "1st Edition",
+        "card-number": "DPKB-EN001",
+        "price": 75
+      },
+      {
+        "id": 5,
+        "name": "Dark Magician",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/129674.jpg",
+        "edition": "Unlimited",
+        "card-number": "SDY-006",
+        "price": 75
+      },
+      {
+        "id": 6,
+        "name": "Red Eyes B. Dragon",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/144947.jpg",
+        "edition": "1st Edition",
+        "card-number": "SDJ-001",
+        "price": 90
+      },
+      {
+        "id": 7,
+        "name": "Obelisk The Tormentor",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/79079.jpg",
+        "edition": "Limited Edition",
+        "card-number": "GBI-002",
+        "price": 150
+      },
+      {
+        "id": 8,
+        "name": "Dark Paladin",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/155991.jpg",
+        "edition": "Unlimited",
+        "card-number": "MFC-105",
+        "price": 85
+      },
+      {
+        "id": 9,
+        "name": "Crystal Wing Synchro Dragon",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/235732.jpg",
+        "edition": "1st Edition",
+        "card-number": "GFTP-EN130",
+        "price": 225
+      },
+      {
+        "id": 10,
+        "name": "Crush Card Virus",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/161972.jpg",
+        "edition": "1st Edition",
+        "card-number": "DPKB-EN039",
+        "price": 240
+      },
+      {
+        "id": 11,
+        "name": "Cyber Jar",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/21856.jpg",
+        "edition": "1st Edition",
+        "card-number": "DPKB-EN010",
+        "price": 120
+      },
+      {
+        "id": 12,
+        "name": "Pot Of Greed",
+        "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/23670.jpg",
+        "edition": "1st Edition",
+        "card-number": "DPKB-EN029",
+        "price": 230
+      }
+    ]
+}
