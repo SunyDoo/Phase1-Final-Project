@@ -122,7 +122,7 @@ function createNewCard(){
 }
 
 function newCardObj(e){
-    preventDefault()
+    e.preventDefault()
     let newCardObj={
         name:e.target.name.value,
         image:e.target.image.value,
@@ -131,8 +131,23 @@ function newCardObj(e){
         price:e.target.price.value,
         currentBid: 0        
     }
+    renderOneCard(newCardObj)
     postNewCard(newCardObj)
+    document.querySelector('form').reset()
 }
+
+//funtion to post new cards to db
+function postNewCard(newCardObj){
+    fetch (baseURL,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(newCardObj)
+    })
+    .then(res=>res.json())
+    .then(card=>console.log(card))
+  }
 
 
 //function to update bids to db

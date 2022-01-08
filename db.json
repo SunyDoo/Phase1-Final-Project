@@ -107,6 +107,15 @@
       "cardNumber": "DPKB-EN029",
       "currentBid": 0,
       "price": 230
+    },
+    {
+      "name": "XY-Dragon Cannon",
+      "image": "https://product-images.tcgplayer.com/fit-in/437x437/filters:format(webp)/123796.jpg",
+      "edition": "1st Edition",
+      "cardNumber": "MFC-051",
+      "price": "175",
+      "currentBid": 0,
+      "id": 13
     }
   ]
 }
