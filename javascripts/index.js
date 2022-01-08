@@ -71,7 +71,7 @@ function renderOneCard(cardObj){
 function createNewCard(){
     pagerefresh()
     const form = document.createElement('form')
-    form.class = 'addCardForm'
+    form.id = 'addCardForm'
     form.innerHTML= `
         <h3>Submit your own card for Auction</h3>
 
@@ -115,9 +115,23 @@ function createNewCard(){
           class="input-text"
         />
         <br />
-        <button id ="submit" class="waves-effect waves-light btn blue accent-1">Submit Card </button>
+        <button id ="submitCard" class="waves-effect waves-light btn blue accent-1">Submit Card </button>
     `
     main.appendChild(form)
+    document.querySelector('form').addEventListener('submit', newCardObj)
+}
+
+function newCardObj(e){
+    preventDefault()
+    let newCardObj={
+        name:e.target.name.value,
+        image:e.target.image.value,
+        edition:e.target.edition.value,
+        cardNumber:e.target.cardNumber.value,
+        price:e.target.price.value,
+        currentBid: 0        
+    }
+    postNewCard(newCardObj)
 }
 
 
