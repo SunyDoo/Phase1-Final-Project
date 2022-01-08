@@ -37,7 +37,7 @@ function renderOneCard(cardObj){
     const card = document.createElement('ul')
     card.id = `${cardObj.id}`
     card.className='card'
-    card.style.background = '#bdbdbd'
+    card.style.background = '#e0e0e0'
     card.style.display = 'inline-grid';
     card.style.padding = '1rem'
     card.innerHTML=`
@@ -62,7 +62,7 @@ function renderOneCard(cardObj){
     card.querySelector('#buyout').addEventListener('click', (event)=>{
         console.log(event)
         card.remove()
-        // deleteCard(cardObj)
+        deleteCard(cardObj)
     })
 }
 
@@ -163,26 +163,21 @@ function updateBids(cardObj){
     .then(card=>console.log(card))
 }
 
-//function to delete card from db
-// function deleteCard(cardObj){
-//     fetch(`${baseURL}/${cardObj.id}`,{
-//         method: 'DELETE',
-//         headers:{
-//             'Content-Type':'application/json'
-//         }
-//     })
-//     .then(res=>res.json())
-//     .then(data=>console.log(data))
-// }
-
-
-
-
-
+// function to delete card from db
+function deleteCard(cardObj){
+    fetch(`${baseURL}/${cardObj.id}`,{
+        method: 'DELETE',
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+}
 
 //Countdown function to end Auction
 function startCountdown(){
-    var countDownDate = new Date("Jan 31, 2022 15:37:25").getTime();
+    var countDownDate = new Date("Jan 31, 2022 00:00:00").getTime();
     var x = setInterval(function() {
         var now = new Date().getTime();
         var distance = countDownDate - now;
