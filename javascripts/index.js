@@ -12,7 +12,7 @@ main.style.textAlign= 'center';
 
 //content load and page refresh
 document.addEventListener('DOMContentLoaded',()=>{
-    pagerefresh()
+    
     startCountdown()
 })
 
@@ -22,12 +22,13 @@ function pagerefresh(){
 
 //event listeners
 viewCollection.addEventListener('click', fetchCards)
-// newCard.addEventListener('click', createNewCard)
+newCard.addEventListener('click', createNewCard)
 
 
 function fetchCards(){
     fetch (baseURL)
     .then (res=>res.json())
+    .then (pagerefresh())
     .then(data=>data.forEach(card=>renderOneCard(card)))    
 }
 
@@ -43,8 +44,8 @@ function renderOneCard(cardObj){
     <img src="${cardObj.image}" class="card-pic" />
     <div class="card-info">
         <p>${cardObj.name}</p>
-        <p> ${cardObj.edition}</p>
         <p> ${cardObj.cardNumber}</p>
+        <p> ${cardObj.edition}</p>
         <p>
         CurrentBid: $<span class="current-bid">${cardObj.currentBid}</span>
         </p>
@@ -61,13 +62,66 @@ function renderOneCard(cardObj){
     card.querySelector('#buyout').addEventListener('click', (event)=>{
         console.log(event)
         card.remove()
-        deleteCard(cardObj)
+        // deleteCard(cardObj)
     })
 }
 
 
+//function to submit new card
+function createNewCard(){
+    pagerefresh()
+    const form = document.createElement('form')
+    form.class = 'addCardForm'
+    form.innerHTML= `
+        <h3>Submit your own card for Auction</h3>
 
-//function to update bids to server
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter Card Name..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="image"
+          value=""
+          placeholder="Enter Card Image URL..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="edition"
+          value=""
+          placeholder="Enter Edition..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="cardNumber"
+          value=""
+          placeholder="Enter Card Number..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="price"
+          value=""
+          placeholder="Enter Buyout Price..."
+          class="input-text"
+        />
+        <br />
+        <button id ="submit" class="waves-effect waves-light btn blue accent-1">Submit Card </button>
+    `
+    main.appendChild(form)
+}
+
+
+//function to update bids to db
 function updateBids(cardObj){
     fetch(`${baseURL}/${cardObj.id}`,{
         method: 'PATCH',
@@ -80,83 +134,17 @@ function updateBids(cardObj){
     .then(card=>console.log(card))
 }
 
-//function to delete card from server
-function deleteCard(cardObj){
-    fetch(`${baseURL}/${cardObj.id}`,{
-        method: 'DELETE',
-        headers:{
-            'Content-Type':'application/json'
-        }
-    })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//function to delete card from db
+// function deleteCard(cardObj){
+//     fetch(`${baseURL}/${cardObj.id}`,{
+//         method: 'DELETE',
+//         headers:{
+//             'Content-Type':'application/json'
+//         }
+//     })
+//     .then(res=>res.json())
+//     .then(data=>console.log(data))
+// }
 
 
 
