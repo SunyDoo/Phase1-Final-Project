@@ -6,9 +6,6 @@ const main = document.getElementById('main')
 const viewCollection = document.getElementById('view')
 const newCard = document.getElementById('newCard')
 
-//style elements in body
-main.style.boxSizing = 'border-box'
-main.style.textAlign= 'center';
 
 //content load and page refresh
 document.addEventListener('DOMContentLoaded',()=>{
@@ -37,9 +34,6 @@ function renderOneCard(cardObj){
     const card = document.createElement('ul')
     card.id = `${cardObj.id}`
     card.className='card'
-    card.style.background = '#e0e0e0'
-    card.style.display = 'inline-grid';
-    card.style.padding = '1rem'
     card.innerHTML=`
     <img src="${cardObj.image}" class="card-pic" />
     <div class="card-info">
@@ -176,20 +170,21 @@ function deleteCard(cardObj){
 }
 
 //Countdown function to end Auction
+//function borrowed from w3schools.com
 function startCountdown(){
-    var countDownDate = new Date("Jan 31, 2022 00:00:00").getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    const countDownDate = new Date("Jan 31, 2022 00:00:00").getTime();
+    const id = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
         + minutes + "m " + seconds + "s ";
         if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+            clearInterval(id);
+            document.getElementById("timer").innerHTML = "EXPIRED";
         }
     }, 1000);
 }
