@@ -1,5 +1,5 @@
 //base URL
-const baseURL = 'http://localhost:3000/cards'
+const baseURL = 'http://localhost:3000/cards/'
 
 //grab elements of document
 const main = document.getElementById('main')
@@ -146,7 +146,7 @@ function postNewCard(newCardObj){
 
 //function to update bids to db
 function updateBids(cardObj){
-    fetch(`${baseURL}/${cardObj.id}`,{
+    fetch(`${baseURL}${cardObj.id}`,{
         method: 'PATCH',
         headers:{
             "Content-Type": 'application/json'
@@ -159,7 +159,7 @@ function updateBids(cardObj){
 
 // function to delete card from db
 function deleteCard(cardObj){
-    fetch(`${baseURL}/${cardObj.id}`,{
+    fetch(`${baseURL}${cardObj.id}`,{
         method: 'DELETE',
         headers:{
             'Content-Type':'application/json'
